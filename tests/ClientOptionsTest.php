@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests;
 
-use TYPO3Canto\CantoApi\ClientOptions;
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
+use TYPO3Canto\CantoApi\ClientOptions;
 
 class ClientOptionsTest extends TestCase
 {

@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http\Upload;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3Canto\CantoApi\DTO\Status;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 use TYPO3Canto\CantoApi\Http\Response;
-use Psr\Http\Message\ResponseInterface;
 
 final class QueryUploadStatusResponse extends Response
 {

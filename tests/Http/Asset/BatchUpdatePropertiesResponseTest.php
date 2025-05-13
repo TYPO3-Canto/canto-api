@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\Asset;
 
-use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesResponse;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesResponse;
 
 class BatchUpdatePropertiesResponseTest extends TestCase
 {

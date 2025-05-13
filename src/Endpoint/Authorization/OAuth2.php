@@ -11,13 +11,13 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Endpoint\Authorization;
 
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Uri;
 use TYPO3Canto\CantoApi\Endpoint\AbstractEndpoint;
 use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Request;
 use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Response;
 use TYPO3Canto\CantoApi\Http\RequestInterface;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Uri;
 
 final class OAuth2 extends AbstractEndpoint
 {

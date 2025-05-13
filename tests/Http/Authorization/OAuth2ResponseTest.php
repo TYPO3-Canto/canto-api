@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\Authorization;
 
-use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Response;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Response;
 
 class OAuth2ResponseTest extends TestCase
 {

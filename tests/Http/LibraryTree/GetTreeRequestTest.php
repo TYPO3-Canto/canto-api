@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\LibraryTree;
 
-use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
 
 class GetTreeRequestTest extends TestCase
 {
