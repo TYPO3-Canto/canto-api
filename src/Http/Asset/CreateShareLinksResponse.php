@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http\Asset;
 
-use TYPO3Canto\CantoApi\Http\Response;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3Canto\CantoApi\Http\Response;
 
 final class CreateShareLinksResponse extends Response
 {

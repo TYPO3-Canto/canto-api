@@ -11,11 +11,6 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Endpoint;
 
-use TYPO3Canto\CantoApi\Client;
-use TYPO3Canto\CantoApi\ClientOptions;
-use TYPO3Canto\CantoApi\Endpoint\LibraryTree;
-use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
-use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
@@ -25,6 +20,11 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
+use TYPO3Canto\CantoApi\Client;
+use TYPO3Canto\CantoApi\ClientOptions;
+use TYPO3Canto\CantoApi\Endpoint\LibraryTree;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
 
 class LibraryTreeTest extends TestCase
 {

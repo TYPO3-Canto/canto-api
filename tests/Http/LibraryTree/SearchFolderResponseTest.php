@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\LibraryTree;
 
-use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderResponse;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderResponse;
 
 class SearchFolderResponseTest extends TestCase
 {
