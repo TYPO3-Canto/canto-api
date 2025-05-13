@@ -1,0 +1,52 @@
+name: ✔ with Roave Backwards Compatibility Check
+
+on: [ push, pull_request, workflow_call ]
+
+jobs:
+    compute:
+        uses: ./.github/workflows/compute.yml
+
+    roave-backwards-compatibility-check:
+        name: Roave Backwards Compatibility Check
+
+        needs: [ compute ]
+
+        env:
+            php: ${{ fromJson(needs.compute.outputs.php-single) }}
+
+        runs-on: ${{ fromJson(needs.compute.outputs.os-single) }}
+
+        steps:
+            -   uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0
+
+            -   name: Store Composer cache directory
+                id: composer-cache
+                run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+            -   uses: actions/cache/restore@v4
+                id: restore-composer-cache
+                with:
+                    path: ${{ steps.composer-cache.outputs.dir }}
+                    key: ${{ runner.os }}-composer-${{ env.php }}
+                    restore-keys: |
+                        ${{ runner.os }}-composer-
+
+            -   name: Set up PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ env.php }}
+                    tools: composer:v2
+
+            -   name: Composer install
+                run: composer require --dev --no-progress --no-suggest roave/backward-compatibility-check
+
+            -   name: Save composer cache
+                uses: actions/cache/save@v4
+                with:
+                    path: ${{ steps.composer-cache.outputs.dir }}
+                    key: ${{ steps.restore-composer-cache.outputs.cache-primary-key }}
+
+            -   name: Run roave/backward-compatibility-check
+                run: vendor/bin/roave-backward-compatibility-check
