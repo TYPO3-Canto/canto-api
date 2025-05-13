@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\Authorization;
 
-use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Request;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Request;
 
 class OAuth2RequestTest extends TestCase
 {

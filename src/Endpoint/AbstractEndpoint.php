@@ -11,15 +11,15 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Endpoint;
 
+use GuzzleHttp\Exception\GuzzleException;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use RuntimeException;
 use TYPO3Canto\CantoApi\Client;
 use TYPO3Canto\CantoApi\Endpoint\Authorization\NotAuthorizedException;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 use TYPO3Canto\CantoApi\Http\RequestInterface as CantoRequestInterface;
 use TYPO3Canto\CantoApi\Http\UploadRequest;
-use GuzzleHttp\Exception\GuzzleException;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use RuntimeException;
 
 /**
  * @internal

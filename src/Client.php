@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi;
 
+use GuzzleHttp\ClientInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use TYPO3Canto\CantoApi\Endpoint\Asset;
 use TYPO3Canto\CantoApi\Endpoint\Authorization\OAuth2;
 use TYPO3Canto\CantoApi\Endpoint\LibraryTree;
@@ -18,9 +21,6 @@ use TYPO3Canto\CantoApi\Endpoint\Upload;
 use TYPO3Canto\CantoApi\Helper\MdcUrlHelper;
 use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Request;
 use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Response;
-use GuzzleHttp\ClientInterface;
-use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 
 class Client
 {

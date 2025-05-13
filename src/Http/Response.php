@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace TYPO3Canto\CantoApi\Http;
 
 use function json_decode;
+
 use JsonException;
 
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;

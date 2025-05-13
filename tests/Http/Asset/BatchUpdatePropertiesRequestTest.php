@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\Asset;
 
-use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesRequest;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesRequest;
 
 class BatchUpdatePropertiesRequestTest extends TestCase
 {

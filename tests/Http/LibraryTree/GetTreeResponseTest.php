@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\LibraryTree;
 
-use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeResponse;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeResponse;
 
 class GetTreeResponseTest extends TestCase
 {

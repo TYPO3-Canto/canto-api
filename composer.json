@@ -46,5 +46,10 @@
     "psr-4": {
       "TYPO3Canto\\CantoApi\\Tests\\": "tests"
     }
+  },
+  "config": {
+    "allow-plugins": {
+      "phpro/grumphp": true
+    }
   }
 }

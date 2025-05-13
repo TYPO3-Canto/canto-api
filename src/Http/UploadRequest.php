@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http;
 
-use TYPO3Canto\CantoApi\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
+use TYPO3Canto\CantoApi\Client;
 
 abstract class UploadRequest implements RequestInterface
 {
