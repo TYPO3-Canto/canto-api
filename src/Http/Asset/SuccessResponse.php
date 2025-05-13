@@ -9,11 +9,11 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Asset;
+namespace TYPO3Canto\CantoApi\Http\Asset;
 
 use Psr\Http\Message\ResponseInterface;
 
-final class SuccessResponse implements \Fairway\CantoSaasApi\Http\ResponseInterface
+final class SuccessResponse implements \TYPO3Canto\CantoApi\Http\ResponseInterface
 {
     private bool $success;
 

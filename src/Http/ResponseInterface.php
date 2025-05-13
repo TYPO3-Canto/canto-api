@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http;
+namespace TYPO3Canto\CantoApi\Http;
 
 interface ResponseInterface
 {

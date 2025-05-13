@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Authorization;
+namespace TYPO3Canto\CantoApi\Http\Authorization;
 
-use Fairway\CantoSaasApi\Http\Request;
+use TYPO3Canto\CantoApi\Http\Request;
 
 class OAuth2Request extends Request
 {

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\LibraryTree;
+namespace TYPO3Canto\CantoApi\Http\LibraryTree;
 
-use Fairway\CantoSaasApi\Http\Request;
+use TYPO3Canto\CantoApi\Http\Request;
 
 class GetDetailsRequest extends Request
 {

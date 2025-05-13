@@ -9,13 +9,13 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Tests\Endpoint;
+namespace TYPO3Canto\CantoApi\Tests\Endpoint;
 
-use Fairway\CantoSaasApi\Client;
-use Fairway\CantoSaasApi\ClientOptions;
-use Fairway\CantoSaasApi\Endpoint\LibraryTree;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetTreeRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\SearchFolderRequest;
+use TYPO3Canto\CantoApi\Client;
+use TYPO3Canto\CantoApi\ClientOptions;
+use TYPO3Canto\CantoApi\Endpoint\LibraryTree;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;

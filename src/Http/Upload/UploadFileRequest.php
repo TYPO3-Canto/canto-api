@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Upload;
+namespace TYPO3Canto\CantoApi\Http\Upload;
 
-use Fairway\CantoSaasApi\Http\UploadRequest;
+use TYPO3Canto\CantoApi\Http\UploadRequest;
 
 /**
  * Before uploading file @see Upload::getUploadSetting() is required.

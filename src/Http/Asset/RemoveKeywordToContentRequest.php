@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Asset;
+namespace TYPO3Canto\CantoApi\Http\Asset;
 
-use Fairway\CantoSaasApi\Http\Request;
+use TYPO3Canto\CantoApi\Http\Request;
 
 final class RemoveKeywordToContentRequest extends Request
 {

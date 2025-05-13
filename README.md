@@ -1,11 +1,17 @@
 # PHP client for Canto API
 
+## Fork information
+
+This package is a fork of [fairway/canto-saas-api](https://packagist.org/packages/fairway/canto-saas-api).
+
+It was forked to be able to extend and maintain a public version of [Canto FAL TYPO3 extension](https://github.com/TYPO3-Canto/canto-fal).
+
 ## Example usage
 
 ```php
-use Fairway\CantoSaasApi\ClientOptions;
-use Fairway\CantoSaasApi\Client;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetTreeRequest;
+use TYPO3Canto\CantoApi\ClientOptions;
+use TYPO3Canto\CantoApi\Client;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
 
 $clientOptions = new ClientOptions([
     'cantoName' => 'my-canto-name',

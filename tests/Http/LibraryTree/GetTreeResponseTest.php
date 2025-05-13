@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Tests\Http\LibraryTree;
+namespace TYPO3Canto\CantoApi\Tests\Http\LibraryTree;
 
-use Fairway\CantoSaasApi\Http\LibraryTree\GetTreeResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeResponse;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 

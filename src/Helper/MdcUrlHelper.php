@@ -9,12 +9,12 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Helper;
+namespace TYPO3Canto\CantoApi\Helper;
 
-use Fairway\CantoSaasApi\Client;
-use Fairway\CantoSaasApi\Endpoint\Authorization\NotAuthorizedException;
-use Fairway\CantoSaasApi\Http\Asset\GetContentDetailsRequest;
-use Fairway\CantoSaasApi\Http\InvalidResponseException;
+use TYPO3Canto\CantoApi\Client;
+use TYPO3Canto\CantoApi\Endpoint\Authorization\NotAuthorizedException;
+use TYPO3Canto\CantoApi\Http\Asset\GetContentDetailsRequest;
+use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 
 final class MdcUrlHelper
 {

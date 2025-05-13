@@ -9,11 +9,11 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Upload;
+namespace TYPO3Canto\CantoApi\Http\Upload;
 
-use Fairway\CantoSaasApi\DTO\Status;
-use Fairway\CantoSaasApi\Http\InvalidResponseException;
-use Fairway\CantoSaasApi\Http\Response;
+use TYPO3Canto\CantoApi\DTO\Status;
+use TYPO3Canto\CantoApi\Http\InvalidResponseException;
+use TYPO3Canto\CantoApi\Http\Response;
 use Psr\Http\Message\ResponseInterface;
 
 final class QueryUploadStatusResponse extends Response

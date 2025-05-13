@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Tests;
+namespace TYPO3Canto\CantoApi\Tests;
 
-use Fairway\CantoSaasApi\ClientOptions;
+use TYPO3Canto\CantoApi\ClientOptions;
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;

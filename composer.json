@@ -1,14 +1,19 @@
 {
-  "name": "fairway/canto-saas-api",
+  "name": "typo3-canto/canto-api",
   "type": "library",
   "description": "Client library for Canto SaaS APIs.",
-  "homepage": "https://github.com/ecentral/fairway-canto-saas-api/",
+  "homepage": "https://github.com/TYPO3-Canto/canto-api",
   "license": "MIT",
   "keywords": [
     "Canto",
     "API"
   ],
   "authors": [
+    {
+      "name": "Nicole Hummel",
+      "email": "nicole-typo3@nimut.dev",
+      "role": "Developer"
+    },
     {
       "name": "Tim Schreiner",
       "role": "Developer",
@@ -34,12 +39,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Fairway\\CantoSaasApi\\": "src"
+      "TYPO3Canto\\CantoApi\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Fairway\\CantoSaasApi\\Tests\\": "tests"
+      "TYPO3Canto\\CantoApi\\Tests\\": "tests"
     }
   }
 }

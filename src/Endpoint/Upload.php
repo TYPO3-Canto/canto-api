@@ -9,15 +9,15 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Endpoint;
+namespace TYPO3Canto\CantoApi\Endpoint;
 
-use Fairway\CantoSaasApi\Http\EmptyResponse;
-use Fairway\CantoSaasApi\Http\InvalidResponseException;
-use Fairway\CantoSaasApi\Http\Upload\GetUploadSettingRequest;
-use Fairway\CantoSaasApi\Http\Upload\GetUploadSettingResponse;
-use Fairway\CantoSaasApi\Http\Upload\QueryUploadStatusRequest;
-use Fairway\CantoSaasApi\Http\Upload\QueryUploadStatusResponse;
-use Fairway\CantoSaasApi\Http\Upload\UploadFileRequest;
+use TYPO3Canto\CantoApi\Http\EmptyResponse;
+use TYPO3Canto\CantoApi\Http\InvalidResponseException;
+use TYPO3Canto\CantoApi\Http\Upload\GetUploadSettingRequest;
+use TYPO3Canto\CantoApi\Http\Upload\GetUploadSettingResponse;
+use TYPO3Canto\CantoApi\Http\Upload\QueryUploadStatusRequest;
+use TYPO3Canto\CantoApi\Http\Upload\QueryUploadStatusResponse;
+use TYPO3Canto\CantoApi\Http\Upload\UploadFileRequest;
 
 final class Upload extends AbstractEndpoint
 {

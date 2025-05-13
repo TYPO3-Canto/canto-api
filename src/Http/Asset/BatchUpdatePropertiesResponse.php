@@ -9,11 +9,11 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Asset;
+namespace TYPO3Canto\CantoApi\Http\Asset;
 
 use Psr\Http\Message\ResponseInterface;
 
-class BatchUpdatePropertiesResponse implements \Fairway\CantoSaasApi\Http\ResponseInterface
+class BatchUpdatePropertiesResponse implements \TYPO3Canto\CantoApi\Http\ResponseInterface
 {
     protected string $body;
 

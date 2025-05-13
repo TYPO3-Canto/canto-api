@@ -9,9 +9,9 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Http\Asset;
+namespace TYPO3Canto\CantoApi\Http\Asset;
 
-final class RenameContentRequest extends \Fairway\CantoSaasApi\Http\Request
+final class RenameContentRequest extends \TYPO3Canto\CantoApi\Http\Request
 {
     private string $scheme;
     private string $contentId;

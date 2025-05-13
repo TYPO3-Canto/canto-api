@@ -9,12 +9,12 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Tests\Endpoint;
+namespace TYPO3Canto\CantoApi\Tests\Endpoint;
 
-use Fairway\CantoSaasApi\Client;
-use Fairway\CantoSaasApi\ClientOptions;
-use Fairway\CantoSaasApi\Endpoint\Asset;
-use Fairway\CantoSaasApi\Http\Asset\BatchUpdatePropertiesRequest;
+use TYPO3Canto\CantoApi\Client;
+use TYPO3Canto\CantoApi\ClientOptions;
+use TYPO3Canto\CantoApi\Endpoint\Asset;
+use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesRequest;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;

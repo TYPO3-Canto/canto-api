@@ -9,23 +9,23 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Endpoint;
+namespace TYPO3Canto\CantoApi\Endpoint;
 
-use Fairway\CantoSaasApi\Endpoint\Authorization\NotAuthorizedException;
-use Fairway\CantoSaasApi\Http\InvalidResponseException;
-use Fairway\CantoSaasApi\Http\LibraryTree\CreateAlbumFolderRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\CreateAlbumFolderResponse;
-use Fairway\CantoSaasApi\Http\LibraryTree\DeleteAlbumFolderResponse;
-use Fairway\CantoSaasApi\Http\LibraryTree\DeleteFolderOrAlbumRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetDetailsRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetDetailsResponse;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetMyCollectionDetailInfoRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetTreeRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\GetTreeResponse;
-use Fairway\CantoSaasApi\Http\LibraryTree\ListAlbumContentRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\ListAlbumContentResponse;
-use Fairway\CantoSaasApi\Http\LibraryTree\SearchFolderRequest;
-use Fairway\CantoSaasApi\Http\LibraryTree\SearchFolderResponse;
+use TYPO3Canto\CantoApi\Endpoint\Authorization\NotAuthorizedException;
+use TYPO3Canto\CantoApi\Http\InvalidResponseException;
+use TYPO3Canto\CantoApi\Http\LibraryTree\CreateAlbumFolderRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\CreateAlbumFolderResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\DeleteAlbumFolderResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\DeleteFolderOrAlbumRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetDetailsRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetDetailsResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetMyCollectionDetailInfoRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\GetTreeResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\ListAlbumContentRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\ListAlbumContentResponse;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderResponse;
 
 final class LibraryTree extends AbstractEndpoint
 {

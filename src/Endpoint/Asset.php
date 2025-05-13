@@ -9,32 +9,32 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace Fairway\CantoSaasApi\Endpoint;
+namespace TYPO3Canto\CantoApi\Endpoint;
 
-use Fairway\CantoSaasApi\Http\Asset\AddKeywordsRequest;
-use Fairway\CantoSaasApi\Http\Asset\AddVersionCommentRequest;
-use Fairway\CantoSaasApi\Http\Asset\AssignContentToAlbumRequest;
-use Fairway\CantoSaasApi\Http\Asset\AttachKeywordToContentRequest;
-use Fairway\CantoSaasApi\Http\Asset\AttachTagToContentRequest;
-use Fairway\CantoSaasApi\Http\Asset\BatchGetContentDetailsRequest;
-use Fairway\CantoSaasApi\Http\Asset\BatchGetContentDetailsResponse;
-use Fairway\CantoSaasApi\Http\Asset\BatchUpdatePropertiesRequest;
-use Fairway\CantoSaasApi\Http\Asset\BatchUpdatePropertiesResponse;
-use Fairway\CantoSaasApi\Http\Asset\CreateShareLinksRequest;
-use Fairway\CantoSaasApi\Http\Asset\CreateShareLinksResponse;
-use Fairway\CantoSaasApi\Http\Asset\GetContentDetailsRequest;
-use Fairway\CantoSaasApi\Http\Asset\GetContentDetailsResponse;
-use Fairway\CantoSaasApi\Http\Asset\ListSpecificSchemeRequest;
-use Fairway\CantoSaasApi\Http\Asset\RemoveContentFromAlbumRequest;
-use Fairway\CantoSaasApi\Http\Asset\RemoveKeywordToContentRequest;
-use Fairway\CantoSaasApi\Http\Asset\RemoveTagFromContentRequest;
-use Fairway\CantoSaasApi\Http\Asset\RenameContentRequest;
-use Fairway\CantoSaasApi\Http\Asset\SearchRequest;
-use Fairway\CantoSaasApi\Http\Asset\SearchResponse;
-use Fairway\CantoSaasApi\Http\Asset\SuccessResponse;
-use Fairway\CantoSaasApi\Http\EmptyResponse;
-use Fairway\CantoSaasApi\Http\InvalidResponseException;
-use Fairway\CantoSaasApi\Http\RequestInterface;
+use TYPO3Canto\CantoApi\Http\Asset\AddKeywordsRequest;
+use TYPO3Canto\CantoApi\Http\Asset\AddVersionCommentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\AssignContentToAlbumRequest;
+use TYPO3Canto\CantoApi\Http\Asset\AttachKeywordToContentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\AttachTagToContentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\BatchGetContentDetailsRequest;
+use TYPO3Canto\CantoApi\Http\Asset\BatchGetContentDetailsResponse;
+use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesRequest;
+use TYPO3Canto\CantoApi\Http\Asset\BatchUpdatePropertiesResponse;
+use TYPO3Canto\CantoApi\Http\Asset\CreateShareLinksRequest;
+use TYPO3Canto\CantoApi\Http\Asset\CreateShareLinksResponse;
+use TYPO3Canto\CantoApi\Http\Asset\GetContentDetailsRequest;
+use TYPO3Canto\CantoApi\Http\Asset\GetContentDetailsResponse;
+use TYPO3Canto\CantoApi\Http\Asset\ListSpecificSchemeRequest;
+use TYPO3Canto\CantoApi\Http\Asset\RemoveContentFromAlbumRequest;
+use TYPO3Canto\CantoApi\Http\Asset\RemoveKeywordToContentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\RemoveTagFromContentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\RenameContentRequest;
+use TYPO3Canto\CantoApi\Http\Asset\SearchRequest;
+use TYPO3Canto\CantoApi\Http\Asset\SearchResponse;
+use TYPO3Canto\CantoApi\Http\Asset\SuccessResponse;
+use TYPO3Canto\CantoApi\Http\EmptyResponse;
+use TYPO3Canto\CantoApi\Http\InvalidResponseException;
+use TYPO3Canto\CantoApi\Http\RequestInterface;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
 
