@@ -26,7 +26,7 @@ class Client
 {
     protected const API_VERSION = 'v1';
     protected const API_ROUTE = 'https://%s.%s/api';
-    protected const MDC_ROUTE = 'https://%s/rendition/%s/%s';
+    protected const MDC_ROUTE = 'https://%s/image/%s/%s';
 
     protected ClientOptions $options;
 
