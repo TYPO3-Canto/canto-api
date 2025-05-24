@@ -35,7 +35,6 @@
     "phpunit/phpunit": "^9.5",
     "phpstan/phpstan": "^1.2",
     "friendsofphp/php-cs-fixer": "^3.57",
-    "phpro/grumphp": "^1.5",
     "php-parallel-lint/php-parallel-lint": "^1.4"
   },
   "autoload": {
@@ -49,8 +48,5 @@
     }
   },
   "config": {
-    "allow-plugins": {
-      "phpro/grumphp": true
-    }
   }
 }
