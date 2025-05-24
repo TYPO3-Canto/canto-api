@@ -24,6 +24,7 @@ grumphp:
       configuration: phpstan.neon
       triggered_by: [ 'php' ]
       level: 5
+      use_grumphp_paths: false
     phpunit:
       config_file: phpunit.xml
       always_execute: true
