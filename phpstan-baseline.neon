@@ -1,0 +1,536 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Attribute class JetBrains\\\\PhpStorm\\\\ArrayShape does not exist\\.$#"
+			count: 1
+			path: src/ClientOptions.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\ClientOptions\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ClientOptions.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\ClientOptions\\:\\:getHttpClientOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ClientOptions.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\ClientOptions\\:\\:validateOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ClientOptions.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\ClientOptions\\:\\:\\$httpClientOptions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/ClientOptions.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\DTO\\\\Status\\:\\:fromResultItem\\(\\) has parameter \\$resultItem with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/DTO/Status.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Endpoint\\\\AbstractEndpoint\\:\\:getResponseWithHttpRequest\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Endpoint/AbstractEndpoint.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Endpoint\\\\AbstractEndpoint\\:\\:sendRequest\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Endpoint/AbstractEndpoint.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Endpoint\\\\Asset\\:\\:batchDeleteContent\\(\\) has parameter \\$request with no type specified\\.$#"
+			count: 1
+			path: src/Endpoint/Asset.php
+
+		-
+			message: "#^Parameter \\#1 \\$from of function stream_copy_to_stream expects resource, resource\\|null given\\.$#"
+			count: 1
+			path: src/Endpoint/Asset.php
+
+		-
+			message: "#^Parameter \\#1 \\$stream of function fclose expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: src/Endpoint/Asset.php
+
+		-
+			message: "#^Parameter \\#2 \\$to of function stream_copy_to_stream expects resource, resource\\|false given\\.$#"
+			count: 1
+			path: src/Endpoint/Asset.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Endpoint\\\\Authorization\\\\NotAuthorizedException\\:\\:__construct\\(\\) has parameter \\$code with no type specified\\.$#"
+			count: 1
+			path: src/Endpoint/Authorization/NotAuthorizedException.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Endpoint\\\\Authorization\\\\NotAuthorizedException\\:\\:__construct\\(\\) has parameter \\$message with no type specified\\.$#"
+			count: 1
+			path: src/Endpoint/Authorization/NotAuthorizedException.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null given\\.$#"
+			count: 1
+			path: src/Endpoint/Authorization/OAuth2.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\AddKeywordsRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/AddKeywordsRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\AddVersionCommentRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/AddVersionCommentRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\AssignContentToAlbumRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/AssignContentToAlbumRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\AssignContentToAlbumRequest\\:\\:\\$content type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/AssignContentToAlbumRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchDeleteContentRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchDeleteContentRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchDeleteContentRequest\\:\\:\\$content type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchDeleteContentRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchGetContentDetailsRequest\\:\\:__construct\\(\\) has parameter \\$listContentDetails with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchGetContentDetailsRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchGetContentDetailsRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchGetContentDetailsRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchGetContentDetailsResponse\\:\\:getAssets\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchGetContentDetailsResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchGetContentDetailsResponse\\:\\:\\$assets type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchGetContentDetailsResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchUpdatePropertiesRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchUpdatePropertiesRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchUpdatePropertiesRequest\\:\\:\\$assets type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchUpdatePropertiesRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\BatchUpdatePropertiesRequest\\:\\:\\$properties type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/BatchUpdatePropertiesRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\CreateShareLinksRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/CreateShareLinksRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\GetContentDetailsResponse\\:\\:getResponseData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/GetContentDetailsResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\GetContentDetailsResponse\\:\\:\\$responseData type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/GetContentDetailsResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:implodeMultiValueArray\\(\\) has parameter \\$multiValue with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$approval type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$custom type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$keywords type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$orientation type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$owner type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$storageClass type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\ListSpecificSchemeRequest\\:\\:\\$tags type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/ListSpecificSchemeRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\RemoveContentFromAlbumRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/RemoveContentFromAlbumRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\RemoveContentFromAlbumRequest\\:\\:\\$content type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/RemoveContentFromAlbumRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\RenameContentRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/RenameContentRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\SearchResponse\\:\\:getFacets\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/SearchResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\SearchResponse\\:\\:getResults\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/SearchResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\SearchResponse\\:\\:\\$facets type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/SearchResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\SearchResponse\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Asset/SearchResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\InvalidResponseException\\:\\:__construct\\(\\) has parameter \\$code with no type specified\\.$#"
+			count: 1
+			path: src/Http/InvalidResponseException.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\InvalidResponseException\\:\\:__construct\\(\\) has parameter \\$message with no type specified\\.$#"
+			count: 1
+			path: src/Http/InvalidResponseException.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\CreateAlbumFolderResponse\\:\\:getResponseData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/CreateAlbumFolderResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\CreateAlbumFolderResponse\\:\\:\\$responseData type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/CreateAlbumFolderResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\DeleteAlbumFolderResponse\\:\\:\\$deleteFail type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/DeleteAlbumFolderResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\DeleteAlbumFolderResponse\\:\\:\\$permissionFail type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/DeleteAlbumFolderResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\DeleteFolderOrAlbumRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/DeleteFolderOrAlbumRequest.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\DeleteFolderOrAlbumRequest\\:\\:\\$folder type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/DeleteFolderOrAlbumRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\GetDetailsResponse\\:\\:getResponseData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/GetDetailsResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\GetDetailsResponse\\:\\:\\$responseData type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/GetDetailsResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\GetTreeResponse\\:\\:getResults\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/GetTreeResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\GetTreeResponse\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/GetTreeResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\ListAlbumContentResponse\\:\\:getFacets\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/ListAlbumContentResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\ListAlbumContentResponse\\:\\:getResults\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/ListAlbumContentResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\ListAlbumContentResponse\\:\\:\\$facets type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/ListAlbumContentResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\ListAlbumContentResponse\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/ListAlbumContentResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\SearchFolderResponse\\:\\:getFacets\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/SearchFolderResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\SearchFolderResponse\\:\\:getResults\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/SearchFolderResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\SearchFolderResponse\\:\\:\\$facets type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/SearchFolderResponse.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\LibraryTree\\\\SearchFolderResponse\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/LibraryTree/SearchFolderResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Request\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Request.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Request\\:\\:toHttpRequest\\(\\) has parameter \\$withHeaders with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Request.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\RequestInterface\\:\\:toHttpRequest\\(\\) has parameter \\$withHeaders with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/RequestInterface.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Response\\:\\:parseResponse\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Response.php
+
+		-
+			message: "#^Property TYPO3Canto\\\\CantoApi\\\\Http\\\\Upload\\\\GetUploadSettingResponse\\:\\:\\$data has no type specified\\.$#"
+			count: 1
+			path: src/Http/Upload/GetUploadSettingResponse.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Upload\\\\UploadFileRequest\\:\\:getFormData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/Upload/UploadFileRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\UploadRequest\\:\\:getFormData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/UploadRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\UploadRequest\\:\\:getMultipart\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/UploadRequest.php
+
+		-
+			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\UploadRequest\\:\\:toHttpRequest\\(\\) has parameter \\$withHeaders with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Http/UploadRequest.php
+
+		-
+			message: "#^Offset 'app_id' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'app_secret' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'code' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'grant_type' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'redirect_uri' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'refresh_token' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'scope' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'user_id' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/Authorization/OAuth2RequestTest.php
+
+		-
+			message: "#^Offset 'layer' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/GetTreeRequestTest.php
+
+		-
+			message: "#^Offset 'sortBy' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/GetTreeRequestTest.php
+
+		-
+			message: "#^Offset 'sortDirection' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/GetTreeRequestTest.php
+
+		-
+			message: "#^Offset 'approval' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'created' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'createdTime' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'dimension' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'duration' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'exactMatch' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'fileSize' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'keyword' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'keywords' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'lastModified' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'limit' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'orientation' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'owner' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'pageNumber' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'resolution' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'scheme' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'sortBy' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'sortDirection' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'start' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'tags' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
+
+		-
+			message: "#^Offset 'uploadedTime' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
+			count: 1
+			path: tests/Http/LibraryTree/SearchFolderRequestTest.php
