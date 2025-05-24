@@ -261,7 +261,7 @@ class SearchFolderRequest extends Request
             'sortDirection' => $this->sortDirection,
             'limit' => $this->limit,
             'start' => $this->start,
-            'exactMatch' => $this->exactMatch
+            'exactMatch' => $this->exactMatch,
         ];
     }
 

@@ -11,8 +11,4 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Endpoint\Authorization;
 
-use Exception;
-
-final class AuthorizationFailedException extends Exception
-{
-}
+final class AuthorizationFailedException extends \Exception {}

@@ -306,7 +306,7 @@ class SearchRequest extends Request
             'start' => $this->start,
             'searchInField' => $this->searchInField,
             'operator' => $this->operator,
-            'exactMatch' => $this->exactMatch
+            'exactMatch' => $this->exactMatch,
         ];
     }
 

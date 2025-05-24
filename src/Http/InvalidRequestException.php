@@ -11,8 +11,4 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http;
 
-use Exception;
-
-final class InvalidRequestException extends Exception
-{
-}
+final class InvalidRequestException extends \Exception {}

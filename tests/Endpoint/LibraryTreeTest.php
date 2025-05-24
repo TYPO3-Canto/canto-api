@@ -72,7 +72,7 @@ class LibraryTreeTest extends TestCase
                 'Error Communicating with Server',
                 new Request('GET', 'test'),
                 new Response(401, [], '[]')
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);
@@ -95,7 +95,7 @@ class LibraryTreeTest extends TestCase
                 'Error Communicating with Server',
                 new Request('GET', 'test'),
                 new Response(400, [], '[]')
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);

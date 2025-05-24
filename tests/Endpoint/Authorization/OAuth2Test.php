@@ -37,7 +37,7 @@ class OAuth2Test extends TestCase
                 200,
                 [],
                 '{"accessToken":"access-token-1234","expiresIn":3600,"tokenType":"Bearer","refreshToken":"refresh-token-1234"}'
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);
@@ -65,7 +65,7 @@ class OAuth2Test extends TestCase
                 'Error Communicating with Server',
                 new Request('POST', 'test'),
                 new Response(400)
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);

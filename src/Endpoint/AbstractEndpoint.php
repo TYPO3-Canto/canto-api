@@ -14,7 +14,6 @@ namespace TYPO3Canto\CantoApi\Endpoint;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use RuntimeException;
 use TYPO3Canto\CantoApi\Client;
 use TYPO3Canto\CantoApi\Endpoint\Authorization\NotAuthorizedException;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
@@ -40,7 +39,7 @@ abstract class AbstractEndpoint
 
     /**
      * @throws NotAuthorizedException
-     * @throws RuntimeException
+     * @throws \RuntimeException
      */
     protected function sendRequest(RequestInterface $request, array $options = [], bool $withAccessToken = true): ResponseInterface
     {
@@ -57,7 +56,7 @@ abstract class AbstractEndpoint
 
         try {
             $response = $this->client->getHttpClient()->send($request, $options);
-        } catch (RuntimeException $e) {
+        } catch (\RuntimeException $e) {
             /*
              * API seems to respond with 404 when no authentication token is given but needed.
              * When token is given but invalid, API responds with 401.

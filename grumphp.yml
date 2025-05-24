@@ -2,23 +2,15 @@ grumphp:
   ascii:
     failed: failed.txt
     succeeded: succeeded.txt
-  stop_on_failure: false
   hide_circumvention_tip: true
   ignore_unstaged_changes: false
   process_timeout: 60
+  stop_on_failure: false
   tasks:
     composer:
       no_check_publish: true
       with_dependencies: false
       strict: false
-    phpstan:
-      memory_limit: "-1"
-      configuration: phpstan.neon
-      triggered_by: [ 'php' ]
-      level: 5
-    phpunit:
-      config_file: phpunit.xml
-      always_execute: true
     phpcsfixer2:
       allow_risky: ~
       config: .php-cs-fixer.dist.php
@@ -27,4 +19,11 @@ grumphp:
       verbose: true
       diff: false
       triggered_by: [ 'php' ]
-
+    phpstan:
+      memory_limit: "-1"
+      configuration: phpstan.neon
+      triggered_by: [ 'php' ]
+      level: 5
+    phpunit:
+      config_file: phpunit.xml
+      always_execute: true

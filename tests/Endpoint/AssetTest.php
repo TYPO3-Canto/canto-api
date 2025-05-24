@@ -56,7 +56,7 @@ class AssetTest extends TestCase
                 'Error Communicating with Server',
                 new Request('PUT', 'test'),
                 new Response(401)
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);
@@ -79,7 +79,7 @@ class AssetTest extends TestCase
                 'Error Communicating with Server',
                 new Request('PUT', 'test'),
                 new Response(400, [], 'success')
-            )
+            ),
         ]);
         $clientMock = $this->buildClientMock($mockHandler);
         assert($clientMock instanceof Client);

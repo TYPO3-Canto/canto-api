@@ -65,7 +65,7 @@ class GetTreeRequest extends Request
         return [
             'sortBy' => $this->sortBy,
             'sortDirection' => $this->sortDirection,
-            'layer' => $this->layer
+            'layer' => $this->layer,
         ];
     }
 
