@@ -11,6 +11,4 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http;
 
-interface ResponseInterface
-{
-}
+interface ResponseInterface {}

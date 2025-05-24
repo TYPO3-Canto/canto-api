@@ -11,10 +11,6 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http;
 
-use function json_decode;
-
-use JsonException;
-
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 abstract class Response implements ResponseInterface
@@ -37,8 +33,8 @@ abstract class Response implements ResponseInterface
         }
 
         try {
-            $json = json_decode($content, true, 512, JSON_THROW_ON_ERROR);
-        } catch (JsonException $e) {
+            $json = \json_decode($content, true, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException $e) {
             throw new InvalidResponseException(
                 'Invalid json response received',
                 1626434988,

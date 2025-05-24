@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace TYPO3Canto\CantoApi;
 
 use GuzzleHttp\ClientInterface;
-use InvalidArgumentException;
 use JetBrains\PhpStorm\ArrayShape;
 use Psr\Log\LoggerInterface;
 
@@ -36,7 +35,7 @@ class ClientOptions
             'timeout' => 'int',
             'userAgent' => 'string',
         ],
-        'logger' => LoggerInterface::class
+        'logger' => LoggerInterface::class,
     ];
 
     private string $cantoName;
@@ -62,7 +61,7 @@ class ClientOptions
     private ?LoggerInterface $logger;
 
     /**
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     #[ArrayShape(self::OPTIONS_SHAPE)]
     public function __construct(array $options = [])
@@ -145,24 +144,24 @@ class ClientOptions
     }
 
     /**
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     protected function validateOptions(array $options): void
     {
         if (is_string($options['cantoName']) === false || $options['cantoName'] === '') {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'Option cantoName is not given or not a string.',
                 1626849038
             );
         }
         if (is_string($options['appId']) === false || $options['appId'] === '') {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'Option appId is not given or not a string.',
                 1626849132
             );
         }
         if (is_string($options['appSecret']) === false || $options['appSecret'] === '') {
-            throw new InvalidArgumentException(
+            throw new \InvalidArgumentException(
                 'Option appSecret is not given or not a string.',
                 1626849145
             );

@@ -43,7 +43,7 @@ class SearchFolderRequestTest extends TestCase
             'sortDirection' => 'descending',
             'limit' => 100,
             'start' => 0,
-            'exactMatch' => 'false'
+            'exactMatch' => 'false',
         ];
 
         self::assertSame($expected, $request->getQueryParams());

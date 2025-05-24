@@ -13,11 +13,9 @@ namespace TYPO3Canto\CantoApi\Http;
 
 use GuzzleHttp\Psr7\Request as HttpRequest;
 use GuzzleHttp\Psr7\Uri;
-use JsonException;
-use JsonSerializable;
 use TYPO3Canto\CantoApi\Client;
 
-abstract class Request implements RequestInterface, JsonSerializable
+abstract class Request implements RequestInterface, \JsonSerializable
 {
     public function getQueryParams(): ?array
     {
@@ -46,7 +44,7 @@ abstract class Request implements RequestInterface, JsonSerializable
     {
         try {
             return json_encode($this, JSON_THROW_ON_ERROR);
-        } catch (JsonException $e) {
+        } catch (\JsonException $e) {
             throw new InvalidRequestException(
                 'Can not generate json http body.',
                 1626885024,

@@ -47,7 +47,7 @@ final class QueryUploadStatusResponse extends Response
      */
     public function getStatusItems(): array
     {
-        return array_map(static fn (array $item) => Status::fromResultItem($item), $this->results);
+        return array_map(static fn(array $item) => Status::fromResultItem($item), $this->results);
     }
 
     public function getFound(): int
