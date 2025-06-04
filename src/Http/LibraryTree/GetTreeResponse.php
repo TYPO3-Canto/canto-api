@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http\LibraryTree;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 use TYPO3Canto\CantoApi\Http\Response;
-use Psr\Http\Message\ResponseInterface;
 
 class GetTreeResponse extends Response
 {

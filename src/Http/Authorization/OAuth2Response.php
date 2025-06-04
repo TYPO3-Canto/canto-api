@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Http\Authorization;
 
+use Psr\Http\Message\ResponseInterface;
 use TYPO3Canto\CantoApi\Endpoint\Authorization\AuthorizationFailedException;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 use TYPO3Canto\CantoApi\Http\Response;
-use Psr\Http\Message\ResponseInterface;
 
 class OAuth2Response extends Response
 {

@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Endpoint;
 
+use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3Canto\CantoApi\Http\Asset\AddKeywordsRequest;
 use TYPO3Canto\CantoApi\Http\Asset\AddVersionCommentRequest;
 use TYPO3Canto\CantoApi\Http\Asset\AssignContentToAlbumRequest;
@@ -35,8 +37,6 @@ use TYPO3Canto\CantoApi\Http\Asset\SuccessResponse;
 use TYPO3Canto\CantoApi\Http\EmptyResponse;
 use TYPO3Canto\CantoApi\Http\InvalidResponseException;
 use TYPO3Canto\CantoApi\Http\RequestInterface;
-use GuzzleHttp\Psr7\Request;
-use Psr\Http\Message\ResponseInterface;
 
 final class Asset extends AbstractEndpoint
 {

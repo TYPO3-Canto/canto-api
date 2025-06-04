@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace TYPO3Canto\CantoApi\Tests\Http\LibraryTree;
 
-use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
 use PHPUnit\Framework\TestCase;
+use TYPO3Canto\CantoApi\Http\LibraryTree\SearchFolderRequest;
 
 class SearchFolderRequestTest extends TestCase
 {
