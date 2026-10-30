@@ -97,7 +97,9 @@ final class Asset extends AbstractEndpoint
     public function getAuthorizedUrlContent(string $uri, string $method = RequestInterface::GET): ResponseInterface
     {
         $httpRequest = new Request($method, $uri);
-        return $this->getResponseWithHttpRequest($httpRequest);
+        // Never hand out the access token to hosts other than the canto instance
+        $withAccessToken = $this->getClient()->isCantoInstanceUri($httpRequest->getUri());
+        return $this->getResponseWithHttpRequest($httpRequest, [], $withAccessToken);
     }
 
     /**

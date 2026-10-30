@@ -15,6 +15,7 @@ use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -90,7 +91,45 @@ class AssetTest extends TestCase
         $assetEndpoint->batchUpdateProperties($request);
     }
 
-    protected function buildClientMock(MockHandler $mockHandler): MockObject
+    /**
+     * @return array<string, array{string, bool}>
+     */
+    public static function authorizedUrlDataProvider(): array
+    {
+        return [
+            'canto instance' => ['https://test.canto.com/direct/image/abc/original', true],
+            'canto instance upper case' => ['https://TEST.canto.com/direct/image/abc/original', true],
+            'canto instance explicit port' => ['https://test.canto.com:443/direct/image/abc/original', true],
+            'foreign host' => ['https://evil.tld/direct/image/abc/original', false],
+            'host suffix' => ['https://test.canto.com.evil.tld/x', false],
+            'plain http' => ['http://test.canto.com/direct/image/abc/original', false],
+            'other port' => ['https://test.canto.com:8443/x', false],
+            'user info' => ['https://user@test.canto.com/x', false],
+        ];
+    }
+
+    /**
+     * @test
+     * @dataProvider authorizedUrlDataProvider
+     */
+    public function accessTokenIsOnlySentToCantoInstance(string $uri, bool $expectToken): void
+    {
+        $history = [];
+        $clientMock = $this->buildClientMock(new MockHandler([new Response(200, [], 'content')]), $history, 'access-token');
+        assert($clientMock instanceof Client);
+
+        (new Asset($clientMock))->getAuthorizedUrlContent($uri);
+
+        self::assertSame(
+            $expectToken ? 'Bearer access-token' : '',
+            $history[0]['request']->getHeaderLine('Authorization')
+        );
+    }
+
+    /**
+     * @param array<int, array<string, mixed>>|null $history
+     */
+    protected function buildClientMock(MockHandler $mockHandler, ?array &$history = null, ?string $accessToken = null): MockObject
     {
         $optionsMock = $this->getMockBuilder(ClientOptions::class)
             ->disableOriginalConstructor()
@@ -99,8 +138,12 @@ class AssetTest extends TestCase
         $optionsMock->method('getCantoName')->willReturn('test');
         $optionsMock->method('getCantoDomain')->willReturn('canto.com');
 
+        $handlerStack = HandlerStack::create($mockHandler);
+        if ($history !== null) {
+            $handlerStack->push(Middleware::history($history));
+        }
         $httpClient = new HttpClient([
-            'handler' => HandlerStack::create($mockHandler),
+            'handler' => $handlerStack,
         ]);
 
         $clientMock = $this->getMockBuilder(Client::class)
@@ -110,7 +153,7 @@ class AssetTest extends TestCase
         $clientMock->method('getHttpClient')->willReturn($httpClient);
         $clientMock->method('getLogger')->willReturn(new NullLogger());
         $clientMock->method('getOptions')->willReturn($optionsMock);
-        $clientMock->method('getAccessToken')->willReturn(null);
+        $clientMock->method('getAccessToken')->willReturn($accessToken);
 
         return $clientMock;
     }

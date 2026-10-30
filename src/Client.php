@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace TYPO3Canto\CantoApi;
 
 use GuzzleHttp\ClientInterface;
+use Psr\Http\Message\UriInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use TYPO3Canto\CantoApi\Endpoint\Asset;
@@ -109,6 +110,18 @@ class Client
     public function mdc(): MdcUrlHelper
     {
         return new MdcUrlHelper($this);
+    }
+
+    /**
+     * Whether the uri points to this canto instance, so the access token may be sent along
+     */
+    public function isCantoInstanceUri(UriInterface $uri): bool
+    {
+        $expectedHost = sprintf('%s.%s', $this->getOptions()->getCantoName(), $this->getOptions()->getCantoDomain());
+        return $uri->getScheme() === 'https'
+            && strcasecmp($uri->getHost(), $expectedHost) === 0
+            && in_array($uri->getPort(), [null, 443], true)
+            && $uri->getUserInfo() === '';
     }
 
     public function getApiUrl(?string $path = null): string

@@ -46,9 +46,9 @@ class ClientOptionsTest extends TestCase
         $options = new ClientOptions([
             'appId' => 'no-empty',
             'appSecret' => 'no-empty',
-            'cantoName' => 'My name',
+            'cantoName' => 'my-name',
         ]);
-        self::assertSame('My name', $options->getCantoName());
+        self::assertSame('my-name', $options->getCantoName());
     }
 
     /**
@@ -151,5 +151,52 @@ class ClientOptionsTest extends TestCase
         self::assertTrue($options->getHttpClientOptions()['debug']);
         self::assertSame(30, $options->getHttpClientOptions()['timeout']);
         self::assertSame('My api client', $options->getHttpClientOptions()['userAgent']);
+    }
+
+    /**
+     * @return array<string, array{array<string, string>, int}>
+     */
+    public static function invalidHostOptionsDataProvider(): array
+    {
+        return [
+            'cantoName with path' => [['cantoName' => 'evil.tld/x?'], 1793361001],
+            'cantoName with dot' => [['cantoName' => 'evil.tld'], 1793361001],
+            'cantoName with user info' => [['cantoName' => 'user@evil'], 1793361001],
+            'cantoName with space' => [['cantoName' => 'My name'], 1793361001],
+            'cantoDomain with fragment' => [['cantoName' => 'test', 'cantoDomain' => 'evil.tld#'], 1793361002],
+            'cantoDomain with port' => [['cantoName' => 'test', 'cantoDomain' => 'evil.tld:8080'], 1793361002],
+            'cantoDomain single label' => [['cantoName' => 'test', 'cantoDomain' => 'localhost'], 1793361002],
+            'mdcDomainName with path' => [['cantoName' => 'test', 'mdcDomainName' => 'cdn.tld/evil'], 1793361003],
+        ];
+    }
+
+    /**
+     * @test
+     * @dataProvider invalidHostOptionsDataProvider
+     * @param array<string, string> $hostOptions
+     */
+    public function invalidHostOptionsAreRejected(array $hostOptions, int $expectedCode): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionCode($expectedCode);
+
+        new ClientOptions(array_merge(['appId' => 'no-empty', 'appSecret' => 'no-empty'], $hostOptions));
+    }
+
+    /**
+     * @test
+     */
+    public function validHostOptionsAreAccepted(): void
+    {
+        $options = new ClientOptions([
+            'appId' => 'no-empty',
+            'appSecret' => 'no-empty',
+            'cantoName' => 'my-tenant',
+            'cantoDomain' => 'ca.canto.com',
+            'mdcDomainName' => 'd1234.cloudfront.net',
+        ]);
+
+        self::assertSame('ca.canto.com', $options->getCantoDomain());
+        self::assertSame('d1234.cloudfront.net', $options->getMdcDomainName());
     }
 }
