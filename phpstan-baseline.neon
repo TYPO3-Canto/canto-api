@@ -71,11 +71,6 @@ parameters:
 			path: src/Endpoint/Authorization/NotAuthorizedException.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function count expects array\\|Countable, array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null given\\.$#"
-			count: 1
-			path: src/Endpoint/Authorization/OAuth2.php
-
-		-
 			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\Asset\\\\AddKeywordsRequest\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Http/Asset/AddKeywordsRequest.php
@@ -374,46 +369,6 @@ parameters:
 			message: "#^Method TYPO3Canto\\\\CantoApi\\\\Http\\\\UploadRequest\\:\\:toHttpRequest\\(\\) has parameter \\$withHeaders with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Http/UploadRequest.php
-
-		-
-			message: "#^Offset 'app_id' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'app_secret' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'code' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'grant_type' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'redirect_uri' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'refresh_token' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'scope' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
-
-		-
-			message: "#^Offset 'user_id' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"
-			count: 1
-			path: tests/Http/Authorization/OAuth2RequestTest.php
 
 		-
 			message: "#^Offset 'layer' does not exist on array\\<int\\|string, bool\\|float\\|int\\|string\\>\\|null\\.$#"

@@ -28,13 +28,18 @@ final class OAuth2 extends AbstractEndpoint
     public function obtainAccessToken(OAuth2Request $request): OAuth2Response
     {
         $uri = $this->buildRequestUrl($request);
-        $httpRequest = new Request($request->getMethod(), $uri);
+        $httpRequest = new Request(
+            $request->getMethod(),
+            $uri,
+            ['Content-Type' => 'application/x-www-form-urlencoded'],
+            http_build_query($request->getFormParams())
+        );
 
         try {
             $response = $this->sendRequest($httpRequest);
         } catch (GuzzleException $e) {
             throw new AuthorizationFailedException(
-                $e->getMessage(),
+                $this->maskCredentials($e->getMessage()),
                 1626447895,
                 $e
             );
@@ -45,17 +50,19 @@ final class OAuth2 extends AbstractEndpoint
 
     protected function buildRequestUrl(RequestInterface $request): Uri
     {
-        $url = sprintf(
+        return new Uri(sprintf(
             'https://oauth.%s/oauth/api/oauth2/%s',
             $this->getClient()->getOptions()->getCantoDomain(),
             urlencode(trim($request->getApiPath(), '/'))
-        );
+        ));
+    }
 
-        $queryParams = $request->getQueryParams();
-        if (count($queryParams) > 0) {
-            $url .= '?' . http_build_query($queryParams);
-        }
-
-        return new Uri($url);
+    /**
+     * Credentials may still show up in exception messages, e.g. via an echoed response body
+     */
+    private function maskCredentials(string $message): string
+    {
+        $message = preg_replace('/(app_secret|refresh_token|code)(=|%3D)[^&\s"\']+/i', '$1$2***', $message) ?? $message;
+        return preg_replace('/"(app_secret|refresh_token|code)"\s*:\s*"[^"]*"/i', '"$1":"***"', $message) ?? $message;
     }
 }

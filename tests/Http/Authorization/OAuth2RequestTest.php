@@ -33,7 +33,8 @@ class OAuth2RequestTest extends TestCase
             'user_id' => '',
         ];
 
-        self::assertEquals($expected, $request->getQueryParams());
+        self::assertEquals($expected, $request->getFormParams());
+        self::assertNull($request->getQueryParams());
         self::assertNull($request->getPathVariables());
     }
 
@@ -45,7 +46,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setAppId('app-id-1234');
 
-        self::assertSame('app-id-1234', $request->getQueryParams()['app_id']);
+        self::assertSame('app-id-1234', $request->getFormParams()['app_id']);
     }
 
     /**
@@ -56,7 +57,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setAppSecret('app-secret-1234');
 
-        self::assertSame('app-secret-1234', $request->getQueryParams()['app_secret']);
+        self::assertSame('app-secret-1234', $request->getFormParams()['app_secret']);
     }
 
     /**
@@ -67,7 +68,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setGrantType('my_grant_type');
 
-        self::assertSame('my_grant_type', $request->getQueryParams()['grant_type']);
+        self::assertSame('my_grant_type', $request->getFormParams()['grant_type']);
     }
 
     /**
@@ -78,7 +79,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setRedirectUri('http://localhost');
 
-        self::assertSame('http://localhost', $request->getQueryParams()['redirect_uri']);
+        self::assertSame('http://localhost', $request->getFormParams()['redirect_uri']);
     }
 
     /**
@@ -89,7 +90,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setCode('code-1234');
 
-        self::assertSame('code-1234', $request->getQueryParams()['code']);
+        self::assertSame('code-1234', $request->getFormParams()['code']);
     }
 
     /**
@@ -100,7 +101,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setRefreshToken('refresh-token-1234');
 
-        self::assertSame('refresh-token-1234', $request->getQueryParams()['refresh_token']);
+        self::assertSame('refresh-token-1234', $request->getFormParams()['refresh_token']);
     }
 
     /**
@@ -111,7 +112,7 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setScope('user');
 
-        self::assertSame('user', $request->getQueryParams()['scope']);
+        self::assertSame('user', $request->getFormParams()['scope']);
     }
 
     /**
@@ -122,6 +123,6 @@ class OAuth2RequestTest extends TestCase
         $request = new OAuth2Request();
         $request->setUserId('test@example.tld');
 
-        self::assertSame('test@example.tld', $request->getQueryParams()['user_id']);
+        self::assertSame('test@example.tld', $request->getFormParams()['user_id']);
     }
 }

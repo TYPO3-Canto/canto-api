@@ -12,7 +12,7 @@ declare(strict_types=1);
 namespace TYPO3Canto\CantoApi\Tests\Endpoint;
 
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
@@ -52,7 +52,7 @@ class AssetTest extends TestCase
         $this->expectExceptionCode(1626717511);
 
         $mockHandler = new MockHandler([
-            new RequestException(
+            new ClientException(
                 'Error Communicating with Server',
                 new Request('PUT', 'test'),
                 new Response(401)
@@ -75,7 +75,7 @@ class AssetTest extends TestCase
         $this->expectExceptionCode(1627649307);
 
         $mockHandler = new MockHandler([
-            new RequestException(
+            new ClientException(
                 'Error Communicating with Server',
                 new Request('PUT', 'test'),
                 new Response(400, [], 'success')

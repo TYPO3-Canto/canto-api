@@ -12,9 +12,10 @@ declare(strict_types=1);
 namespace TYPO3Canto\CantoApi\Tests\Endpoint\Authorization;
 
 use GuzzleHttp\Client as HttpClient;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -22,6 +23,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
 use TYPO3Canto\CantoApi\Client;
 use TYPO3Canto\CantoApi\ClientOptions;
+use TYPO3Canto\CantoApi\Endpoint\Authorization\AuthorizationFailedException;
 use TYPO3Canto\CantoApi\Endpoint\Authorization\OAuth2;
 use TYPO3Canto\CantoApi\Http\Authorization\OAuth2Request;
 
@@ -61,7 +63,7 @@ class OAuth2Test extends TestCase
         $this->expectExceptionCode(1626447895);
 
         $mockHandler = new MockHandler([
-            new RequestException(
+            new ClientException(
                 'Error Communicating with Server',
                 new Request('POST', 'test'),
                 new Response(400)
@@ -76,7 +78,62 @@ class OAuth2Test extends TestCase
         $oAuth2->obtainAccessToken($oAuthRequest);
     }
 
-    protected function buildClientMock(MockHandler $mockHandler): MockObject
+    /**
+     * @test
+     */
+    public function credentialsAreSentInBodyNotInUrl(): void
+    {
+        $history = [];
+        $mockHandler = new MockHandler([
+            new Response(200, [], '{"accessToken":"a","expiresIn":3600,"tokenType":"Bearer","refreshToken":"r"}'),
+        ]);
+        $clientMock = $this->buildClientMock($mockHandler, $history);
+        assert($clientMock instanceof Client);
+        $oAuthRequest = $this->buildRequestMock();
+        assert($oAuthRequest instanceof OAuth2Request);
+
+        (new OAuth2($clientMock))->obtainAccessToken($oAuthRequest);
+
+        $sentRequest = $history[0]['request'];
+        self::assertSame('', $sentRequest->getUri()->getQuery());
+        self::assertSame('application/x-www-form-urlencoded', $sentRequest->getHeaderLine('Content-Type'));
+        parse_str((string)$sentRequest->getBody(), $body);
+        self::assertSame('app-secret-1234', $body['app_secret']);
+        self::assertSame('refresh-token-1234', $body['refresh_token']);
+    }
+
+    /**
+     * @test
+     */
+    public function credentialsAreMaskedInExceptionMessage(): void
+    {
+        $mockHandler = new MockHandler([
+            new ClientException(
+                'Failed: app_secret=app-secret-1234&code=code-1234 {"refresh_token":"refresh-token-1234"}',
+                new Request('POST', 'test'),
+                new Response(400)
+            ),
+        ]);
+        $clientMock = $this->buildClientMock($mockHandler);
+        assert($clientMock instanceof Client);
+        $oAuthRequest = $this->buildRequestMock();
+        assert($oAuthRequest instanceof OAuth2Request);
+
+        try {
+            (new OAuth2($clientMock))->obtainAccessToken($oAuthRequest);
+            self::fail('AuthorizationFailedException expected');
+        } catch (AuthorizationFailedException $e) {
+            self::assertStringNotContainsString('app-secret-1234', $e->getMessage());
+            self::assertStringNotContainsString('code-1234', $e->getMessage());
+            self::assertStringNotContainsString('refresh-token-1234', $e->getMessage());
+            self::assertStringContainsString('app_secret=***', $e->getMessage());
+        }
+    }
+
+    /**
+     * @param array<int, array<string, mixed>>|null $history
+     */
+    protected function buildClientMock(MockHandler $mockHandler, ?array &$history = null): MockObject
     {
         $optionsMock = $this->getMockBuilder(ClientOptions::class)
             ->disableOriginalConstructor()
@@ -85,8 +142,12 @@ class OAuth2Test extends TestCase
         $optionsMock->method('getCantoName')->willReturn('test');
         $optionsMock->method('getCantoDomain')->willReturn('canto.com');
 
+        $handlerStack = HandlerStack::create($mockHandler);
+        if ($history !== null) {
+            $handlerStack->push(Middleware::history($history));
+        }
         $httpClient = new HttpClient([
-            'handler' => HandlerStack::create($mockHandler),
+            'handler' => $handlerStack,
         ]);
 
         $clientMock = $this->getMockBuilder(Client::class)
@@ -105,9 +166,9 @@ class OAuth2Test extends TestCase
     {
         $requestMock = $this->getMockBuilder(OAuth2Request::class)
             ->disableOriginalConstructor()
-            ->onlyMethods(['getQueryParams'])
+            ->onlyMethods(['getFormParams'])
             ->getMock();
-        $requestMock->method('getQueryParams')->willReturn([
+        $requestMock->method('getFormParams')->willReturn([
             'app_id' => 'app-id-1234',
             'app_secret' => 'app-secret-1234',
             'grant_type' => 'client_credentials',

@@ -92,7 +92,18 @@ class OAuth2Request extends Request
         return $this;
     }
 
+    /**
+     * Credentials are sent in the form-encoded body, never in the query string
+     */
     public function getQueryParams(): ?array
+    {
+        return null;
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public function getFormParams(): array
     {
         return [
             'app_id' => $this->appId,
